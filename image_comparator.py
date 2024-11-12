@@ -12,10 +12,10 @@ class ImageComparatorApp:
     def __init__(self, window):
         self.log_text = None
         self.root = window
-        self.root.title("Eureka® Image Comparator v1.0")
+        self.root.title("ImageComparator®")
 
         # Adicionar ícone personalizado
-        icon_path = "image-comparator-02.ico"  # Substitua pelo caminho do seu ícone .ico
+        icon_path = "image-comparator.ico"  # Substitua pelo caminho do seu ícone .ico
         if os.path.exists(icon_path):
             self.root.iconbitmap(icon_path)
 
@@ -36,8 +36,8 @@ class ImageComparatorApp:
     def create_layout(self):
         """Configura o layout da interface"""
         # Título
-        title_label = ttk.Label(self.root, text="ImageComparator®", font=("Helvetica", 16, "bold"))
-        title_label.pack(pady=10)
+        title_label = ttk.Label(self.root, text="ImageComparator®", font=("Segoe UI", 18, "bold"))
+        title_label.pack(pady=20)
 
         # Primeira linha de botões (Capturar Imagem 1 e Capturar Imagem 2)
         capture_buttons_frame = ttk.Frame(self.root)
@@ -50,9 +50,10 @@ class ImageComparatorApp:
 
         style = ttk.Style()
         style.configure("TButton", font=("Segoe UI", 10, "normal"))
+        style.configure("Compare.TButton", font=("Segoe UI", 12, "normal"))
 
-        compare_button = ttk.Button(self.root, text="Comparar Imagens", command=self.compare_images, width=42,
-                                    padding=(10, 20), style="TButton")
+        compare_button = ttk.Button(self.root, text="COMPARAR", command=self.compare_images, width=33,
+                                    padding=(10, 20), style="Compare.TButton")
         compare_button.pack(pady=10)
 
         # Ajuste de Sensibilidade
@@ -77,8 +78,14 @@ class ImageComparatorApp:
         footer_frame = ttk.Frame(self.root)
         footer_frame.pack(side="bottom", pady=10)
 
-        ttk.Label(footer_frame, text="Desenvolvido por Eliezer Moraes Silva").pack(side="left", padx=5)
-        ttk.Button(footer_frame, text="GitHub", command=self.open_github).pack(side="left", padx=5)
+        ttk.Label(footer_frame, text="Created by ").pack(side="left", padx=5)
+        # ttk.Button(footer_frame, text="GitHub", command=self.open_github).pack(side="left", padx=5)
+
+        github_link = ttk.Label(footer_frame, text="Eliezer Moraes Silva", foreground="blue", cursor="hand2")
+        github_link.pack(side="left", padx=5)
+        github_link.bind("<Button-1>", lambda e: self.open_github())
+
+        ttk.Label(footer_frame, text=" v1.0_built-12112024").pack(side="left", padx=5)
 
     def log_message(self, message):
         self.log_text.config(state="normal")
@@ -171,5 +178,5 @@ app = ImageComparatorApp(root)
 
 # Configurações para desabilitar redimensionamento
 root.resizable(False, False)
-root.geometry('500x540')  # Ajusta o tamanho da janela
+root.geometry('500x560')  # Ajusta o tamanho da janela
 root.mainloop()
