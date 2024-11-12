@@ -85,7 +85,7 @@ class ImageComparatorApp:
         github_link.pack(side="left", padx=5)
         github_link.bind("<Button-1>", lambda e: self.open_github())
 
-        ttk.Label(footer_frame, text=" v1.0_built-12112024").pack(side="left", padx=5)
+        ttk.Label(footer_frame, text=" v1.0_built-11122024").pack(side="left", padx=5)
 
     def log_message(self, message):
         self.log_text.config(state="normal")
