@@ -1,4 +1,4 @@
-# ImageComparator®
+# 📷✔️ ImageComparator®
 
 Bem-vindo ao **ImageComparator®**, uma ferramenta inovadora de comparação de imagens projetada para facilitar o processo de captura, análise e comparação visual de capturas de tela. Criado com precisão e eficiência em mente, essa ferramenta usa técnicas avançadas de visão computacional para processamento de imagens, permitindo que os usuários destaquem facilmente as diferenças entre duas imagens.
 ### Ideal para todos os perfis de usuário o <b>ImageComparator®</b> é o seu aplicativo essencial para comparar diferenças sutis entre imagens com alta precisão e confiabilidade!
